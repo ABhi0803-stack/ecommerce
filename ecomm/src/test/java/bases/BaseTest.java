@@ -16,7 +16,11 @@ public class BaseTest{
     public void setUp() {
     	driver = new ChromeDriver();
     	driver.manage().window().maximize();
+<<<<<<< HEAD
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
+=======
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15)); 
+>>>>>>> 8cb7b80429f12b509a6d81fd6d4b7cd0869b1368
         driver.get(baseUrl);
     }
    
