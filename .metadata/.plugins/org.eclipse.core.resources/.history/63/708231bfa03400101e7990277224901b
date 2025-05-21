@@ -1,0 +1,41 @@
+package pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Checkoutpage {
+	
+	private WebDriver driver;
+
+	// Constructor to initialize driver
+	public Checkoutpage(WebDriver driver) {
+		this.driver = driver;
+	}
+	 By proceedtocheckout = By.xpath("//a[normalize-space()='Proceed To Checkout']");
+	 By addressdetails = By.xpath("//a[normalize-space()='Proceed To Checkout']");
+	
+	 public void placeorder(){
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(proceedtocheckout));
+			driver.findElement(proceedtocheckout).click();
+	//wait.until(ExpectedConditions.visibilityOfElementLocated(addressdetails));
+			WebElement placeOrderBtn = wait.until(
+		            ExpectedConditions.visibilityOfElementLocated(By.linkText("Place Order"))
+		        );
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", placeOrderBtn);
+			try {
+	            Thread.sleep(500);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+
+	        placeOrderBtn.click(); 
+	 }
+
+}

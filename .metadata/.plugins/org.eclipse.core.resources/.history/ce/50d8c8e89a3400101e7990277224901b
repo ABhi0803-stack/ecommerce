@@ -1,0 +1,50 @@
+package pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Homepage {
+
+	private WebDriver driver;
+
+	// Constructor to initialize driver
+	public Homepage(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	private By Home = By.xpath("//a[normalize-space()='Home']");
+	private By products = By.xpath("//a[@href='/products']");
+	private By cart = By.xpath("//a[normalize-space()='Cart']");
+	private By logout = By.xpath("//a[normalize-space()='Logout']");
+	private By deleteAcc = By.xpath("//a[normalize-space()='Delete Account']");
+
+	
+	public void Products() {
+		driver.findElement(products).click();
+		  
+	}
+	public void Home() {
+		driver.findElement(Home).click();
+		  
+	} 
+	public void cart() {
+		driver.findElement(cart).click();
+		  
+	}
+	public void logout() {
+		driver.findElement(logout).click();
+		  
+	}
+	public void deleteAcc() {
+		driver.findElement(logout).click();
+		  
+	}
+	
+}
+

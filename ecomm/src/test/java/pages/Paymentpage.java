@@ -1,0 +1,38 @@
+package pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Paymentpage {
+	private WebDriver driver;
+
+	// Constructor to initialize driver
+	public Paymentpage(WebDriver driver) {
+		this.driver = driver;
+	}
+	 By pay = By.xpath("//h2[@class='heading']");
+	 private By nameofcard = By.xpath("//input[@data-qa='name-on-card']");
+	 private By cardnumber = By.xpath("//input[@data-qa='card-number']");
+	 private By cvc = By.xpath("//input[@data-qa='cvc']");
+	 private By exmonth = By.xpath("//input[@data-qa='expiry-month']");
+	 private By exyear = By.xpath("//input[@data-qa='expiry-year']");
+	 private By submit = By.id("submit");
+	 
+	 
+	 public void Carddetails(){
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(pay));
+			driver.findElement(nameofcard).sendKeys("Rangaraju R");
+			driver.findElement(cardnumber).sendKeys("1234 5678 9012 3456");
+			driver.findElement(cvc).sendKeys("456");
+			driver.findElement(exmonth).sendKeys("04");
+			driver.findElement(exyear).sendKeys("2036");
+			driver.findElement(submit).click();
+		  
+	 }
+	 
+}

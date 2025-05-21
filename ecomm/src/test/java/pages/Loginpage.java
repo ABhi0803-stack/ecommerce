@@ -1,0 +1,33 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Loginpage {
+	
+	private WebDriver driver;
+
+    // Constructor to initialize driver
+    public Loginpage(WebDriver driver) {
+        this.driver = driver;
+    }
+    
+    private By name = By.xpath("//input[@placeholder='Name']");
+    private By signupemail = By.xpath("//input[@data-qa='signup-email']");
+    private By loginupemail = By.xpath("//input[@data-qa='login-email']");
+    private By loginpassword = By.xpath("//input[@data-qa='login-password']");
+    private By loginbutton = By.xpath("//button[@data-qa='login-button']");
+    private By signupbutton= By.xpath("//button[@data-qa='signup-button']");
+ 
+    public void clickSignupLogin() {
+    	driver.findElement(name).sendKeys("Rangaraju");
+    	driver.findElement(signupemail).sendKeys("abhis14066@gmail.com");
+        driver.findElement(signupbutton).click(); 
+    }
+    
+    public void clickLogin() {
+    	driver.findElement(loginupemail).sendKeys("abhis14066@gmail.com");
+    	driver.findElement(loginpassword).sendKeys("Abhi@123");
+        driver.findElement(loginbutton).click(); 
+    }
+}

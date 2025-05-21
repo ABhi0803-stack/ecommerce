@@ -1,0 +1,18 @@
+package Tests;
+
+import org.testng.annotations.Test;
+
+import bases.BaseTest;
+import pages.Homepage;
+import pages.Loginpage;
+
+public class Addingitem extends BaseTest {
+	@Test
+    public void verifysignup() { 
+		Loginpage login = new Loginpage(driver);
+		login.clickLogin();
+		Homepage home = new Homepage(driver);
+		home.SearchProducts();
+	}
+
+}
